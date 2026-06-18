@@ -32,11 +32,14 @@ model Platform{
   user User @relation(fields:[userId],references:[id],onDelete:Cascade)
   Pname String 
   Purl String 
+  meta types
   isConnected Boolean @default(false)
   createdAt DateTime @default(now())
   activities  Activity[]
-
-  
+}
+enum types{
+  auto
+  manual
 }
 model Activity{
   id String @id @default(uuid())
