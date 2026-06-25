@@ -17,6 +17,7 @@ model User{
   email String @unique
   provider AuthProvider
   name String
+  supabaseId String @unique
   Platform Platform[]
   createdAt DateTime @default(now())
   Activities Activity[]
