@@ -1,6 +1,7 @@
 import {NextResponse,NextRequest} from "next/server";
-import { prisma } from "@/app/generated/prisma";
-import { createClient } from "@/utils/supabase/server";
+import prisma from "@/lib/prisma";
+import {createClient} from "@/lib/client"
+const supabase=createClient();
 export async function POST(req:NextRequest){
     try{
         const supabase=await createClient();
